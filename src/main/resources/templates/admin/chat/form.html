@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/admin/layout/_form :: dynamic(
+				~{::main},
+				~{::#javascriptResource},
+				~{::#cssResource}
+				)}">
+<th:block id="cssResource">
+    <link rel="stylesheet"
+          href="/assets/admin/global/vendor/formvalidation/formValidation.min599c.css?v4.0.2">
+
+    <link rel="stylesheet"
+          href="/assets/admin/base/assets/examples/css/forms/validation.min599c.css?v4.0.2">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</th:block>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<main>
+    <!-- Page -->
+    <div class="page">
+        <div class="page-header">
+            <h1 class="page-title">Thông Tin huấn luyện</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Trang
+                    chủ</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Danh
+                    mục</a></li>
+                <li class="breadcrumb-item active">Thông tin</li>
+            </ol>
+        </div>
+
+        <div class="page-content container-fluid">
+            <!-- Panel Full Example -->
+            <div class="panel">
+                <div class="panel-body">
+                    <form th:action="@{/admin/chat/add}" method="post"
+                          id="exampleFullForm" name="formBlog">
+
+                        <div class="row row-lg">
+                            <div class="col-xl-6 form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-xl-12 col-md-3 form-control-label">Tiêu
+                                        đề <span class="required">*</span>
+                                    </label>
+                                    <div class="col-xl-12 col-md-9">
+                                        <div class="input-group">
+												<span class="input-group-addon"> <i class="fa fa-tag"
+                                                                                    aria-hidden="true"></i>
+												</span> <input data-maxlength="200" data-minlength="5" type="text"
+                                                               id="name" class="form-control" name="name">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-xl-12 col-md-3 form-control-label">Tên
+                                        intent <span class="required">*</span>
+                                    </label>
+                                    <div class="col-xl-12 col-md-9">
+                                        <div class="input-group">
+												<span class="input-group-addon"> <i class="fa fa-tag"
+                                                                                    aria-hidden="true"></i>
+												</span> <input data-maxlength="50" data-minlength="5" type="text"
+                                                               id="intent_name" class="form-control" name="intent_name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12 form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-xl-12 col-md-3 form-control-label">Câu hỏi huấn luyện <span
+                                            class="required">*</span>
+                                    </label>
+                                    <div class="col-xl-12 col-md-9">
+                                        <div class="input-group">
+												<span class="input-group-addon"> <i
+                                                        class="icon wb-info-circle" aria-hidden="true"></i>
+												</span>
+                                            <textarea data-minlength="200" data-maxlength="10000"
+                                                      rows="5" cols="5" class="form-control" id="training_phrases"
+                                                      name="training_phrases"
+                                                      placeholder="Input something..."></textarea>
+                                            <div class="invalid-tooltip" id="showErrorContent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-xl-12 col-md-3 form-control-label">Phản hồi<span class="required">*</span>
+                                    </label>
+                                    <div class="col-xl-12 col-md-9">
+                                        <div class="input-group">
+												<span class="input-group-addon"> <i
+                                                        class="icon wb-info-circle" aria-hidden="true"></i>
+												</span>
+                                            <textarea data-minlength="50" data-maxlength="255"
+                                                      rows="5" cols="5" class="form-control" id="responses"
+                                                      placeholder="Describe something..." name="responses"></textarea>
+                                            <div class="invalid-tooltip" id="showErrorDescription"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-xl-12 text-right padding-top-m">
+                                <button id="btnSave" type="submit"
+                                        class="btn btn-primary">
+                                    <i class="fa fa-save" aria-hidden="true"></i> Lưu
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Panel Full Example -->
+        </div>
+
+    </div>
+
+
+    <!-- End Modal -->
+</main>
+</body>
+<th:block id="javascriptResource">
+    <!-- Plugins For This Page -->
+    <script
+            src="/assets/admin/global/vendor/formvalidation/framework/bootstrap4.min599c.js?v4.0.2"></script>
+
+    <script
+            src="/assets/admin/base/assets/examples/js/forms/validation.min599c.js?v4.0.2"></script>
+
+    <!-- Plugins For This Page -->
+    <script
+            src="/assets/admin/global/vendor/jquery-placeholder/jquery.placeholder599c.js?v4.0.2"></script>
+    <script
+            src="/assets/admin/global/js/Plugin/input-group-file.min599c.js?v4.0.2"></script>
+</th:block>
+</html>
